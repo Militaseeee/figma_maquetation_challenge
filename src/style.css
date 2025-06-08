@@ -1,0 +1,470 @@
+@font-face {
+    font-family: 'Gilroy-UltraLight';
+    src: url('../assets/fonts/Gilroy-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-Thin';
+    src: url('../assets/fonts/Gilroy-Thin.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-ThinItalic';
+    src: url('../assets/fonts/Gilroy-ThinItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+:root {
+    --Very_pale_pink: hsl(6, 50%, 96%);
+    --Soft_peach: hsl(6, 80%, 91%);
+    --Light_coral: hsl(7, 85%, 81%);
+    --Black: hsl(0, 0%, 0%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Centro del contenido donde tiene límites de ancho */
+.content {
+    max-width: 120rem;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+/* Barra de navegación */
+.navigator-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--Soft_peach);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-family: 'Gilroy-ThinItalic';
+    height: 5rem;
+}
+
+.navigator-bar span {
+    font-family: 'Gilroy-Medium';
+}
+
+.list-navbar {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.list-navbar a {
+    text-decoration: none;
+    font-family: 'Gilroy-UltraLight';
+    color: var(--Black);
+}
+
+main {
+    flex: 1;  /* Le dice al <main> que ocupe todo el espacio disponible en el body */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Propiedad evita que el contenido desborde el área visible del <main> */
+}
+
+.principal-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    height: calc(100vh - 7rem); /* 5rem navbar + 2rem márgenes */ /* altura pantalla menos altura de navbar y margen */
+    overflow: hidden;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.first-column {
+    display: flex;
+    gap: 1rem;
+    height: 50%;
+}
+
+.title,
+.portrait {
+    height: 100%;
+    overflow: hidden;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Linea los elementos hijos al inicio del eje horizontal (a la izquierda) */
+    background: var(--Soft_peach);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    flex: 2; /* Indica que .title puede crecer el doble de rápido que un elemento con flex: 1, y también puede encogerse si es necesario */
+    position: relative;
+    justify-content: center;
+    flex-shrink: 1; /* Permite que el elemento se encoga si no hay suficiente espacio disponible */
+}
+
+.flower {
+    align-self: flex-end; /* Hace que el elemento .flower se alinee al final del eje cruzado (normalmente abajo o a la derecha) */
+    object-fit: contain; 
+    line-height: 0; /* Elimina el espacio vertical adicional que algunos navegadores dejan por defecto */
+}
+
+.flower img {
+    width: 5rem;
+    display: block; /* Hace que la imagen se comporte como un bloque, eliminando el espacio extra que las imágenes en línea suelen dejar debajo */
+    margin-top: -3rem;
+}
+
+.title h2 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-family: 'Gilroy-Medium';
+    margin-bottom: 0;
+}
+
+.title em {
+    font-family: 'Gilroy-ThinItalic';
+}
+
+.portrait {
+    flex: 1;
+}
+
+.portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen se recorte y escale proporcionalmente para cubrir todo el contenedor */
+    border-radius: 1rem;
+}
+
+/* Segunda fila de columnas */
+.second-column {
+    display: flex;
+    height: 50%;
+}
+
+.orden-column {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+}
+
+.bio-text {
+    flex: 1;
+    background-color: var(--Soft_peach);
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bio-text img {
+    width: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.bio-text p {
+    font-family: 'Gilroy-Thin';
+}
+
+.text-julia {
+    font-family: 'Gilroy-Thin';
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--Black);
+    margin-right: 7rem;
+    margin-top: auto;
+}
+
+.contact-box {
+    flex: 1;
+    background-color: var(--Light_coral);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.orden-contact {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.orden-contact img {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.contact-box h1 {
+    font-size: 2rem;
+    margin-top: auto;
+    font-family: 'Gilroy-Medium';
+    font-weight: 500;
+}
+
+.contact-box h5 {
+    font-family: 'Gilroy-Thin';
+    font-size: 0.8rem;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    overflow: hidden;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Soft_peach);
+    border-radius: 1rem;
+    padding: 1.1rem;
+    flex: 1;
+    overflow: hidden;
+}
+
+.orden-musea {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.orden-musea img {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.orden-musea h3 {
+    font-family: 'Gilroy-Medium';
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.img-picture {
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-list {
+    list-style: none;
+    margin-top: 1rem;
+    font-family: 'Gilroy-Medium';
+    overflow-y: auto;
+    flex: 1;
+}
+
+.project-list li {
+    padding: 0.8rem 0;
+    border-top: 2px solid var(--Light_coral);
+}
+
+.footer {
+    background-color: var(--Soft_peach);
+    border-radius: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-family: 'Gilroy-UltraLight';
+    color: var(--Black);
+}
+
+@media (max-width: 768px) {
+    html, body {
+        height: auto;
+        overflow: auto;
+    }
+
+    .principal-content {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .left-column,
+    .right-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .first-column {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .title {
+        flex: none;
+        width: 100%;
+        padding: 1.2rem;
+        border-radius: 1rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .title h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .flower {
+        margin-left: auto;
+        margin-top: -0.5rem;
+    }
+
+    .flower img {
+        width: 3rem;
+        margin-top: 0.3rem;
+    }
+
+    .portrait {
+        width: 100%;
+        height: auto;
+    }
+
+    .portrait img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    .second-column {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .bio-text,
+    .contact-box,
+    .right-content {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .navigator-bar {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 1rem;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .list-navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer {
+        padding: 1rem;
+    }
+
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .project-list {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+  /* Reducir paddings para ahorrar espacio */
+    .navigator-bar {
+        padding: 0.5rem 1rem !important;
+    }
+
+  /* Ajustar tamaño imagen flor para que no sobresalga */
+    .flower img {
+        width: 4rem;
+        margin-top: 0rem;
+    }
+
+    .social-links {
+        gap: 1rem !important;
+    }
+
+    .social-links a {
+        font-size: 0.85rem;
+    }
+
+    /* Asegurar que las imágenes no se desborden */
+    .img-picture img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+
+    .bio-text img {
+        width: 1.2rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .text-julia {
+        font-size: 0.75rem;
+        margin-right: 2rem; /* reducir margen lateral para mejor uso del espacio */
+    }
+}
